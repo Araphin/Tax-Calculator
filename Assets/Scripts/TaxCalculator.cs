@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using SpeechLib;
 using System.Threading.Tasks;
+using TMpro
 
 public class TaxCalculator : MonoBehaviour
 {
     // Constant rate for the Medicare Levy
     const double MEDICARE_LEVY = 0.02;
-    //Hello :)
+    //sugma
     // Variables
     bool textToSpeechEnabled = true;
 
@@ -38,14 +39,18 @@ public class TaxCalculator : MonoBehaviour
     {
         // Get from user. E.g. input box
         // Validate the input (ensure it is a positive, valid number)
-        double grossYearlySalary = 1000;
+        double grossYearlySalary = 0;
+        if(double.Tryparse(GrossSalaryTextInput.text, out grossYearlySalary))
+        { 
+         
+        }
         return grossYearlySalary;
     }
 
     private string GetSalaryPayPeriod()
     {
         // Get from user. E.g. combobox or radio buttons
-        string salaryPayPeriod = "weekly";
+        string salaryPayPeriod = ;
         return salaryPayPeriod;
     }
 
@@ -68,7 +73,7 @@ public class TaxCalculator : MonoBehaviour
     private double CalculateMedicareLevy(double grossYearlySalary)
     {
         // This is a stub, replace with the real calculation and return the result
-        double medicareLevyPaid = 2000;        
+        double medicareLevyPaid = (grossYearlySalary * MEDICARE_LEVY)
         return medicareLevyPaid;
     }
 
