@@ -111,7 +111,16 @@ public class TaxCalculator : MonoBehaviour
     private double CalculateIncomeTax(double grossYearlySalary)
     {
         // This is a stub, replace with the real calculation and return the result
-        double incomeTaxPaid = 15000;
+        double incomeTaxPaid = 15000; 
+        if (grossYearlySalary < 18200)
+        {
+            return 0;
+        }
+        else if (grossYearlySalary < 37000)
+        {
+            grossYearlySalary - 18200
+            return 
+        }
         return incomeTaxPaid;
     }
 

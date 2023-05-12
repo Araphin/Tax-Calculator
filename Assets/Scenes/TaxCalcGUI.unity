@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 858075080}
   - component: {fileID: 858075079}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Convert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1311,6 +1311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fcf55b6bfc3d04fb56cc2f2fbd4517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputSalary: {fileID: 0}
+  PayPeriodDropDown: {fileID: 0}
 --- !u!114 &1151694038
 MonoBehaviour:
   m_ObjectHideFlags: 0
