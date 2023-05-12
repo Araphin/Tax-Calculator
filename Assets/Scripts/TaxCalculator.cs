@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using SpeechLib;
 using System.Threading.Tasks;
-using TMpro
+using System.Globalization;
 
 public class TaxCalculator : MonoBehaviour
 {
     // Constant rate for the Medicare Levy
     const double MEDICARE_LEVY = 0.02;
-    //sugma
+    public TMPro.TMP_InputField InputSalary;
+    public TMPro.TMP_Dropdown PayPeriodDropDown;
+    //Hello :)
     // Variables
     bool textToSpeechEnabled = true;
 
@@ -39,25 +41,54 @@ public class TaxCalculator : MonoBehaviour
     {
         // Get from user. E.g. input box
         // Validate the input (ensure it is a positive, valid number)
-        double grossYearlySalary = 0;
-        if(double.Tryparse(GrossSalaryTextInput.text, out grossYearlySalary))
-        { 
-         
-        }
+        double grossYearlySalary = double.Parse(InputSalary.text);
         return grossYearlySalary;
     }
 
     private string GetSalaryPayPeriod()
     {
         // Get from user. E.g. combobox or radio buttons
-        string salaryPayPeriod = ;
-        return salaryPayPeriod;
+        // string salaryPayPeriod = PayPeriodDropDown.value;
+
+        if (PayPeriodDropDown.value == 0)
+        {
+            return "Weekly";
+        }
+        else if (PayPeriodDropDown.value == 1)
+        {
+            return "fortnightly";
+        }
+        else if (PayPeriodDropDown.value == 2)
+        {
+            return "Monthly";
+        }
+        else if (PayPeriodDropDown.value == 3)
+        {
+            return "Yearly";
+        }
+        else { return "nO"; }
     }
 
     private double CalculateGrossYearlySalary(double grossSalaryInput, string salaryPayPeriod)
     {
         // This is a stub, replace with the real calculation and return the result
         double grossYearlySalary = 50000;
+        if (salaryPayPeriod == "Weekly")
+        {
+            return grossYearlySalary * 52;
+        }
+        else if (salaryPayPeriod == "Fortnightly")
+        {
+            return grossYearlySalary * 26;
+        }
+        else if (salaryPayPeriod == "Monthly")
+        {
+            return grossYearlySalary * 12;
+        }
+        else if (salaryPayPeriod == "Yearly")
+        {
+            return grossYearlySalary * 1;
+        }
         return grossYearlySalary;
     }
 
@@ -73,7 +104,7 @@ public class TaxCalculator : MonoBehaviour
     private double CalculateMedicareLevy(double grossYearlySalary)
     {
         // This is a stub, replace with the real calculation and return the result
-        double medicareLevyPaid = (grossYearlySalary * MEDICARE_LEVY)
+        double medicareLevyPaid = 2000;        
         return medicareLevyPaid;
     }
 
