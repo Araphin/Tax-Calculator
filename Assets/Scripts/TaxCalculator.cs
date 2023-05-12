@@ -104,7 +104,7 @@ public class TaxCalculator : MonoBehaviour
     private double CalculateMedicareLevy(double grossYearlySalary)
     {
         // This is a stub, replace with the real calculation and return the result
-        double medicareLevyPaid = 2000;        
+        double medicareLevyPaid = grossYearlySalary / 100 * 2;       
         return medicareLevyPaid;
     }
 
