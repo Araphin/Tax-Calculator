@@ -97,7 +97,7 @@ public class TaxCalculator : MonoBehaviour
         // This is a stub, replace with the real calculation and return the result
         medicareLevyPaid = CalculateMedicareLevy(grossYearlySalary);
         incomeTaxPaid = CalculateIncomeTax(grossYearlySalary);
-        double netIncome = 33000;        
+        double netIncome = grossYearlySalary - medicareLevyPaid - incomeTaxPaid;        
         return netIncome;
     }
 
